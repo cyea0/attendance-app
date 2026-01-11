@@ -1,0 +1,13 @@
+{
+  "name": "출석체크",
+  "short_name": "출석체크",
+  "description": "간단하고 깔끔한 출석체크 앱",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007aff",
+  "orientation": "portrait",
+  "icons": []
+}
+

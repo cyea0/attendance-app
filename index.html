@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>출석체크 앱</title>
+    <meta name="description" content="간단하고 깔끔한 출석체크 앱">
+    <meta name="theme-color" content="#007aff">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>출석체크</h1>
+            <p class="date" id="currentDate"></p>
+            <div class="streak-badge" id="streakBadge">
+                <span class="streak-text">연속 <strong id="headerStreak">0</strong>일</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="attendance-card">
+                <div class="stats">
+                    <div class="stat-item">
+                        <h2 id="totalDays">0</h2>
+                        <p>총 출석일</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2 id="currentStreak">0</h2>
+                        <p>연속 출석</p>
+                    </div>
+                </div>
+
+                <button class="check-btn" id="checkBtn">
+                    <span class="btn-text">출석체크</span>
+                    <span class="btn-icon">✓</span>
+                </button>
+
+                <button class="cancel-btn" id="cancelBtn" style="display: none;">
+                    <span class="btn-text">출석 취소</span>
+                    <span class="btn-icon">✕</span>
+                </button>
+
+                <div class="status-message" id="statusMessage"></div>
+            </div>
+
+            <div class="history-section">
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="list">목록</button>
+                    <button class="toggle-btn" data-view="calendar">달력</button>
+                </div>
+                
+                <div class="history-view list-view" id="listView">
+                    <h3>최근 출석 기록</h3>
+                    <div class="history-list" id="historyList">
+                        <p class="no-history">출석 기록이 없습니다.</p>
+                    </div>
+                </div>
+                
+                <div class="history-view calendar-view" id="calendarView" style="display: none;">
+                    <h3>출석 달력</h3>
+                    <div class="calendar-controls">
+                        <button class="calendar-nav-btn" id="prevMonth">‹</button>
+                        <h4 id="calendarMonth"></h4>
+                        <button class="calendar-nav-btn" id="nextMonth">›</button>
+                    </div>
+                    <div class="calendar-container" id="calendarContainer"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
